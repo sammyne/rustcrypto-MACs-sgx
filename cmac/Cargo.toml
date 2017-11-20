@@ -15,3 +15,4 @@ block-cipher-trait = "0.5"
 [dev-dependencies]
 crypto-mac = { version = "0.5.1", features = ["dev"] }
 aesni = "0.2"
+des = "0.1"

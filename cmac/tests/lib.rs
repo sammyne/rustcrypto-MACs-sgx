@@ -4,12 +4,13 @@
 #[macro_use]
 extern crate crypto_mac;
 extern crate aesni;
+extern crate des;
 extern crate cmac;
 
 use cmac::Cmac;
 use cmac::crypto_mac::dev::{mac_test, Test};
 use aesni::{Aes128, Aes192, Aes256};
-
+use des::Tdes;
 
 #[test]
 fn cmac_aes128() {
@@ -27,4 +28,11 @@ fn cmac_aes192() {
 fn cmac_aes256() {
     let tests = new_mac_tests!("aes256/1", "aes256/2", "aes256/3", "aes256/4");
     mac_test::<Cmac<Aes256>>(&tests);
+}
+
+#[test]
+// https://csrc.nist.gov/CSRC/media/Projects/Cryptographic-Standards-and-Guidelines/documents/examples/TDES_CMAC.pdf
+fn cmac_tdes() {
+    let tests = new_mac_tests!("tdes/1");
+    mac_test::<Cmac<Tdes>>(&tests);
 }
