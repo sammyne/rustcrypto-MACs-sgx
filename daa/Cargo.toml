@@ -9,8 +9,8 @@ repository = "https://github.com/RustCrypto/MACs"
 keywords = ["crypto", "mac", "daa", "fips"]
 
 [dependencies]
-crypto-mac = "0.7"
-des = "0.2"
+crypto-mac = { git = "https://github.com/mesalock-linux/rustcrypto-traits-sgx" }
+des = { git = "https://github.com/mesalock-linux/rustcrypto-block-ciphers-sgx" }
 
 [dev-dependencies]
-crypto-mac = { version = "0.7", features = ["dev"] }
+#crypto-mac = { version = "0.7", features = ["dev"] }

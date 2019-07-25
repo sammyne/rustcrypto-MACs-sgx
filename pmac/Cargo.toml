@@ -10,13 +10,13 @@ keywords = ["crypto", "mac", "pmac"]
 categories = ["cryptography", "no-std"]
 
 [dependencies]
-crypto-mac = "0.7"
-block-cipher-trait = "0.6"
+crypto-mac = { git = "https://github.com/mesalock-linux/rustcrypto-traits-sgx" }
+block-cipher-trait = { git = "https://github.com/mesalock-linux/rustcrypto-traits-sgx" }
 dbl = "0.2"
 
 [dev-dependencies]
-crypto-mac = { version = "0.7", features = ["dev"] }
-aes = "0.3"
+#crypto-mac = { version = "0.7", features = ["dev"] }
+#aes = "0.3"
 
 [badges]
 travis-ci = { repository = "RustCrypto/hashes" }
